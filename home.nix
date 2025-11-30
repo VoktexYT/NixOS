@@ -13,8 +13,9 @@
 
   programs.fish.enable = true;
   programs.neovim.enable = true;
-  
+
   programs.sway = {
+    services.run.sway.enable = true;
     enable = true;
     config = {
       terminal = "foot";
