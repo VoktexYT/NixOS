@@ -27,5 +27,5 @@
   ];
 
   home-manager.users.ton_user = import ./home.nix;
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.11";
 }
