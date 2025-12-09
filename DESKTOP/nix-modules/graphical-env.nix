@@ -18,7 +18,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.regreet}/bin/regreet";
+        command = "${pkgs.cage}/bin/cage -s -- ${pkgs.regreet}/bin/regreet";
         user = "greeter";
       };
     };
