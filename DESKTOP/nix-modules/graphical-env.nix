@@ -2,7 +2,6 @@
 
 {
   programs.sway.enable = true;
-  programs.waybar.enable = true;
   
   services.dbus.enable = true;
   xdg.portal = {
@@ -14,13 +13,30 @@
     ];
   };
 
-  services.greetd = {
+  services.displayManager.ly = {
     enable = true;
     settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";
+      animation = "colormix";
+      clock = "%c";
+      hide_borders = false;
+      vi_mode = false;
+    };
+  };
+
+  services.displayManager.defaultSession = "sway";
+
+  systemd.user.services = {
+    wayland-session-env = {
+      description = "Set Wayland environment variables";
+      wantedBy = [ "default.target" ];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = "${pkgs.systemd}/bin/systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP";
       };
     };
   };
+
+  systemd.services.display-manager.serviceConfig.ExecStartPre = [
+    "${pkgs.coreutils}/bin/printf '\\e]P01a1b26\\e]P7c0caf5\\e]P1f7768e\\e]P29ece6a\\e]P3e0af68\\e]P47aa2f7\\e]P5bb9af7\\e]P67dcfff'"
+  ];
 }

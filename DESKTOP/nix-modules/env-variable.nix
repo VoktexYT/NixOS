@@ -8,6 +8,8 @@
   };
 
   environment.etc."sway/config".source = ../app-configs/sway/config;
+  environment.etc."wofi/config".source = ../app-configs/wofi/config;
+  environment.etc."xdg/wofi/style.css".source = ../app-configs/wofi/style.css;
   environment.etc."xdg/fish/config.fish".source = ../app-configs/fish/config.fish;
   environment.etc."xdg/kitty/kitty.conf".source = ../app-configs/kitty/kitty.conf;
   environment.etc."xdg/waybar/config.jsonc".source = ../app-configs/waybar/config.jsonc;
