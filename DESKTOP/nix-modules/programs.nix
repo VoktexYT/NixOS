@@ -14,6 +14,7 @@
     curl       
     unzip     
     wl-clipboard 
+    slurp
     php 
     fastfetch  
 
@@ -22,6 +23,7 @@
     ripgrep 
     trash-cli
     fd     
+    clang-tools
     fzf   
     tree-sitter 
     lua-language-server 
@@ -34,6 +36,7 @@
     vtsls
     vue-language-server
     nil
+    bear
     nixfmt-rfc-style
 
     # --- Graphical Apps ---
